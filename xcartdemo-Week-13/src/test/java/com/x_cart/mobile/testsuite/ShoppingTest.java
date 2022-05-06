@@ -54,7 +54,7 @@ public class ShoppingTest extends TestBase {
         String actualLoginToYourAccountText = targetpage.getLoginToYourAccountText();
         Assert.assertEquals(actualLoginToYourAccountText,"Log in to your account","error");
         // 1.14 Enter Email address
-        targetpage.enterEmailAddress("RameshPatel2900@gmail.com");
+        targetpage.enterEmailAddress("RameshPatel3400@gmail.com");
         // 1.15 Click on “Continue” Button
         targetpage.clickOnContinueButton();
         //1.16 Verify the text “Secure Checkout”
@@ -82,6 +82,7 @@ public class ShoppingTest extends TestBase {
         String actualTotalAmountAfterShippingCostText = targetpage.getTotalAmountAfterShippingCostText();
         Assert.assertEquals(actualTotalAmountAfterShippingCostText,"$311.03","error");
         // 1.23 Click on “Place Order” Button
+        Thread.sleep(2000);
         targetpage.clickOnPlaceOrderButton();
         //1.24 Verify the text “Thank you for your order”
         String expectedThankYouForOrderText = "Thank you for your order";

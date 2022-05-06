@@ -32,8 +32,6 @@ public class TargetPage extends Utility {
     By placeOrderButton = By.xpath("//button[contains(@class,'btn regular-button regular-main-button place-order submit')]");
     By thankYouForOrderText = By.id("page-title");
     By emptyCartButton = By.xpath("(//a[normalize-space()='Empty your cart'])[1]");
-    //By itemDeletedFromCart = By.xpath("//li[@class='info']");
-    //By itemDeletedFromCart = By.id("status-messages");
     By itemDeletedFromCart = By.xpath("//li[@class='info']");
     By yourCartIsEmpty = By.xpath("//h1[@id='page-title']");
 
