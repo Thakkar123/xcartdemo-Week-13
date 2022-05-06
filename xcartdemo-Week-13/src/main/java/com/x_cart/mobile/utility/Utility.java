@@ -53,7 +53,7 @@ public class Utility extends ManageDriver {
      * This method will accept to alert
      */
     public void acceptAlert() {
-        driver.switchTo().alert();
+        driver.switchTo().alert().accept();
 
     }
 
@@ -73,10 +73,7 @@ public class Utility extends ManageDriver {
 
     public String getTextFromAlert() {
 
-        Alert alert = driver.switchTo().alert();
-        String textOnAlert = alert.getText();
-        System.out.println(textOnAlert);
-        return textOnAlert;
+        return driver.switchTo().alert().getText();
     }
 
 

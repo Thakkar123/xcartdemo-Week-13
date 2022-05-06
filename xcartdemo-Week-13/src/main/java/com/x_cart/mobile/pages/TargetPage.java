@@ -22,33 +22,35 @@ public class TargetPage extends Utility {
     By addressField = By.id("shippingaddress-street");
     By cityField = By.id("shippingaddress-city");
     By countryField = By.id("shippingaddress-country-code");
-    By stateField =By.id("shippingaddress-custom-state");
-    By createProfileCheckBox= By.id("create_profile");
+    By stateField = By.id("shippingaddress-custom-state");
+    By createProfileCheckBox = By.id("create_profile");
     By passwordField = By.id("password");
     By zipCodeField = By.id("shippingaddress-zipcode");
     By localShippingRadioButton = By.id("method128");
     By codRadioButton = By.id("pmethod6");
-    By totalAmountAfterShippingCostText = By.xpath("(//span[normalize-space()='Place order: $311.03'])[1]");
+    By totalAmountAfterShippingCostText = By.xpath("//div[@class='total clearfix']//span[@class='surcharge-cell']");
     By placeOrderButton = By.xpath("//button[contains(@class,'btn regular-button regular-main-button place-order submit')]");
     By thankYouForOrderText = By.id("page-title");
     By emptyCartButton = By.xpath("(//a[normalize-space()='Empty your cart'])[1]");
+    //By itemDeletedFromCart = By.xpath("//li[@class='info']");
+    //By itemDeletedFromCart = By.id("status-messages");
     By itemDeletedFromCart = By.xpath("//li[@class='info']");
     By yourCartIsEmpty = By.xpath("//h1[@id='page-title']");
 
 
-    public String getViewCartVerifyText(){
+    public String getViewCartVerifyText() {
         return getTextFromElement(viewCartVerifyText);
     }
 
-    public String getSubTotalText(){
+    public String getSubTotalText() {
         return getTextFromElement(subTotal);
     }
-    public String getVerifyTotal(){
+
+    public String getVerifyTotal() {
         List<WebElement> actualTotalList = getTheListOfElement(total);
         //create the object of stringbuilder
         StringBuilder strbulTotal = new StringBuilder();
-        for(WebElement totalList : actualTotalList)
-        {
+        for (WebElement totalList : actualTotalList) {
             //append all the list in strbul
             strbulTotal.append(totalList.getText());
         }
@@ -56,80 +58,94 @@ public class TargetPage extends Utility {
         String actualTotal = strbulTotal.toString();
         return actualTotal;
     }
-public void clickOnGoToCheckoutButton(){
-        clickOnElement(goToCheckoutButton);
-}
 
-public String getLoginToYourAccountText(){
+    public void clickOnGoToCheckoutButton() {
+        clickOnElement(goToCheckoutButton);
+    }
+
+    public String getLoginToYourAccountText() {
         return getTextFromElement(loginToYoyAccountText);
-}
-public void enterEmailAddress(String email){
-        sendTextToElement(emailTextBox,email);
-}
-public void clickOnContinueButton(){
+    }
+
+    public void enterEmailAddress(String email) {
+        sendTextToElement(emailTextBox, email);
+    }
+
+    public void clickOnContinueButton() {
         clickOnElement(continueButton);
-}
-public String getSecureCheckoutText(){
+    }
+
+    public String getSecureCheckoutText() {
         return getTextFromElement(secureCheckoutText);
 
-}
-
-    public void enterFirstName(String text){
-        sendTextToElement(firstNameField,text);
     }
 
-    public void enterLastName(String text){
-        sendTextToElement(lastNameField,text);
-    }
-    public void enterAddressName(String text){
-        sendTextToElement(addressField,text);
-    }
-    public void enterCityName(String city){
-        sendTextToElement(cityField,city);
+    public void enterFirstName(String text) {
+        sendTextToElement(firstNameField, text);
     }
 
-    public void selectCountryFromDropDown(String text){
-        selectByValueFromDropDown(countryField,text);
+    public void enterLastName(String text) {
+        sendTextToElement(lastNameField, text);
     }
 
-    public void enterState(String text){
-        sendTextToElement(stateField,text);
+    public void enterAddressName(String text) {
+        sendTextToElement(addressField, text);
     }
 
-    public void enterZipCode(String code){
-        sendTextToElement(zipCodeField,code);
+    public void enterCityName(String city) {
+        sendTextToElement(cityField, city);
     }
 
-    public void clickOnCreateProfileCheckBox(){
+    public void selectCountryFromDropDown(String text) {
+        selectByValueFromDropDown(countryField, text);
+    }
+
+    public void enterState(String text) {
+        sendTextToElement(stateField, text);
+    }
+
+    public void enterZipCode(String code) {
+        sendTextToElement(zipCodeField, code);
+    }
+
+    public void clickOnCreateProfileCheckBox() {
         clickOnElement(createProfileCheckBox);
     }
-    public void enterPassword(String text){
-        sendTextToElement(passwordField,text);
+
+    public void enterPassword(String text) {
+        sendTextToElement(passwordField, text);
     }
 
-    public void clickOnLocalShippingRadioButton(){
+    public void clickOnLocalShippingRadioButton() {
         clickOnElement(localShippingRadioButton);
     }
-    public void clickOnCodRadioButton(){
+
+    public void clickOnCodRadioButton() {
         clickOnElement(codRadioButton);
     }
-    public String getTotalAmountAfterShippingCostText(){
+
+    public String getTotalAmountAfterShippingCostText() {
         return getTextFromElement(totalAmountAfterShippingCostText);
     }
-    public void clickOnPlaceOrderButton(){
+
+    public void clickOnPlaceOrderButton() {
         clickOnElement(placeOrderButton);
     }
-    public String getThankYouForOrderText(){
+
+    public String getThankYouForOrderText() {
         return getTextFromElement(thankYouForOrderText);
     }
 
-    public void clickOnEmptyCartButton(){
+    public void clickOnEmptyCartButton() {
         clickOnElement(emptyCartButton);
     }
-    public String getItemDeletedFromCartText(){
+
+    public String getItemDeletedFromCartText() {
         return getTextFromElement(itemDeletedFromCart);
     }
-    public String geYourCartIsEmptyText(){
+
+    public String geYourCartIsEmptyText() {
         return getTextFromElement(yourCartIsEmpty);
     }
+
 }

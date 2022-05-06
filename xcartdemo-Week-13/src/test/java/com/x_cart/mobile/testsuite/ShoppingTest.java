@@ -54,7 +54,7 @@ public class ShoppingTest extends TestBase {
         String actualLoginToYourAccountText = targetpage.getLoginToYourAccountText();
         Assert.assertEquals(actualLoginToYourAccountText,"Log in to your account","error");
         // 1.14 Enter Email address
-        targetpage.enterEmailAddress("RameshPatel2700@gmail.com");
+        targetpage.enterEmailAddress("RameshPatel2900@gmail.com");
         // 1.15 Click on “Continue” Button
         targetpage.clickOnContinueButton();
         //1.16 Verify the text “Secure Checkout”
@@ -80,7 +80,7 @@ public class ShoppingTest extends TestBase {
         targetpage.clickOnCodRadioButton();
         // 1.22 Verify the total $311.03
         String actualTotalAmountAfterShippingCostText = targetpage.getTotalAmountAfterShippingCostText();
-        Assert.assertEquals(actualTotalAmountAfterShippingCostText,"Place order: $311.03","error");
+        Assert.assertEquals(actualTotalAmountAfterShippingCostText,"$311.03","error");
         // 1.23 Click on “Place Order” Button
         targetpage.clickOnPlaceOrderButton();
         //1.24 Verify the text “Thank you for your order”
@@ -126,18 +126,13 @@ public class ShoppingTest extends TestBase {
         String actualAlertMessage=getTextFromAlert();
         Assert.assertEquals(actualAlertMessage,expectedAlertMessage,"error");
         //1.12 Click “Ok” on alert
-         acceptAlert();
+        acceptAlert();
+        Thread.sleep(1000);
         //1.13 Verify the message “Item(s) deleted from your cart”
         String actualItemDeletedText = targetpage.getItemDeletedFromCartText();
         Assert.assertEquals(actualItemDeletedText,"Item(s) deleted from your cart","error");
         //1.14 Verify the text “Your cart is empty”
         String actualCartEmptyText = targetpage.geYourCartIsEmptyText();
         Assert.assertEquals(actualCartEmptyText,"Your cart is empty");
-
-
-
-
-
     }
-
 }
